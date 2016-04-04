@@ -15,7 +15,7 @@ cross_validation(network, n.seeds, n.neigh, n.boot, kmax, proxyRep = 19,
     \code{matrix} where each row is an edge.}
   \item{degree}{The degree sequence of the network, which is
     an \code{integer} vector of length n.}
-  \item{n}{The network order. The order for every network is 2000.}
+  \item{n}{The network order.}
 }
   The object can be created by \code{\link{local.network.MR.new5}} or
   it can be imported.}
@@ -39,17 +39,17 @@ A list consisting of
  \item{selected_seed_wave}{A list of 3 matrices (one per estimation method.
    See supporting documentation \code{\link{bootdeg}}). Each matrix provides
    the best seed-wave combinations (obtained via cross-validation) for
-   the respective estimation method}
+   the respective estimation method.}
  \item{selected_seed_wave}{A list of 3 matrices (one per estimation method.
    See supporting documentation \code{\link{bootdeg}}). Each matrix provides
-   the 95% bootstrap confidence intervals for the estimated degree frequency
+   the 95 percent bootstrap confidence intervals for the estimated degree frequency
    using the best seed-wave combinations (see above).}
 }
 \description{
 The function's inputs are a network, a vector of possible seed sample-sizes,
 a vector of possible waves, and a few tuning parameters. The output will
 contain the best seed-wave combination for each degree and the width of the
-95% bootstrap confidence intervals at each degree for
+95 percent bootstrap confidence intervals at each degree for
 the best seed-wave combination.
 }
 \note{

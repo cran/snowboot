@@ -1,7 +1,7 @@
 #' Create a "Network" Object from an igraph Object
 #'
-#' This function will take an igraph object and output a "network" which is the
-#' compatible object for using snowboot functions.
+#' This function will convert an igraph object to an object compatible with
+#' snowboot functions.
 #'
 #' @param in_graph An igraph object. To create igraph objects from field data,
 #'      see \code{\link[igraph]{graph_from_edgelist}},

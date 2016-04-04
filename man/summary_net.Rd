@@ -13,7 +13,7 @@ summary_net(net)
     \code{matrix} where each row is an edge.}
   \item{degree}{The degree sequence of the network, which is
     an \code{integer} vector of length n.}
-  \item{n}{The network order. The order for every network is 2000.}
+  \item{n}{The network order.}
 }
   The object can be created by \code{\link{local.network.MR.new5}} or
   it can be imported.}
@@ -23,7 +23,7 @@ a list consisting of:
    \item{realdd}{A vector of length \code{net$n} where each element
    corresponds to the degree of a node in the network.}
    \item{rmean}{A numeric vector of length one that is the arithmetic mean
-         of \code{realdd}. see (\code{\link[base]{mean}}).}
+         of \code{realdd}. see \code{\link[base]{mean}}.}
    \item{rquart}{The lower, median, and upper quartiles of degree sequence
          \code{realdd}.}
    \item{rfreq}{A numeric vector of length five where each element

@@ -7,7 +7,7 @@
 #'    \item{realdd}{A vector of length \code{net$n} where each element
 #'    corresponds to the degree of a node in the network.}
 #'    \item{rmean}{A numeric vector of length one that is the arithmetic mean
-#'          of \code{realdd}. see (\code{\link[base]{mean}}).}
+#'          of \code{realdd}. see \code{\link[base]{mean}}.}
 #'    \item{rquart}{The lower, median, and upper quartiles of degree sequence
 #'          \code{realdd}.}
 #'    \item{rfreq}{A numeric vector of length five where each element

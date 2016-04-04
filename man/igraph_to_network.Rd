@@ -22,8 +22,8 @@ A list that contain elements:
    \item{n}{The network order.}
 }
 \description{
-This function will take an igraph object and output a "network" which is the
-compatible object for using snowboot functions.
+This function will convert an igraph object to an object compatible with
+snowboot functions.
 }
 \examples{
 hex_ring <- igraph::make_ring(6, directed = FALSE, mutual = FALSE, circular = TRUE)

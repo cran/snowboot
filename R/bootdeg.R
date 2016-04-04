@@ -5,8 +5,8 @@
 #'
 #' @param sam.out A list that is the output of \code{\link{Oempdegreedistrib}}.
 #' @param num.sam A vector of integers containing the numeric ids of the LSMI
-#'    samples when \code{sam.out$num.sam} is greater than one. When it is an
-#'    integer, N, , all LSMI from 1 to N are taken from the input \code{sam.out}.
+#'    samples when \code{sam.out$num.sam} is greater than one. When \code{num.sam} is an
+#'    integer, N, LSMI from 1 to N are taken from the input \code{sam.out}.
 #' @param n.boot A positive integer number, the number of bootstrap replications.
 #' @references Efron, B. (1979). Bootstrap methods: another look at the
 #'  jackknife. The annals of Statistics, 1-26.

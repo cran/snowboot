@@ -3,14 +3,16 @@
 #'
 #' Oempdegreedistrib is used to obtain the empirical network degree distribution
 #' from labeled snowball sampling with multiple inclusion (LSMI).
-#'
+#' @references Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
+#'    Gel, Y. R. (2015), Using the bootstrap for statistical inference
+#'    on random graphs. Can J Statistics. doi: 10.1002/cjs.11271
 #' @param net A network object that is list containing:
 #'  \describe{
 #'    \item{edges}{The edgelist of the network. A two column
 #'      \code{matrix} where each row is an edge.}
 #'    \item{degree}{The degree sequence of the network, which is
 #'      an \code{integer} vector of length n.}
-#'    \item{n}{The network order. The order for every network is 2000.}
+#'    \item{n}{The network order.}
 #'  }
 #'    The object can be created by \code{\link{local.network.MR.new5}} or
 #'    it can be imported.
@@ -26,15 +28,12 @@
 #'    corresponds to one LSMI sample. Note that this is an optional parameter.
 #'    WARNING: As of now, this feature is only supported when
 #'    parameter \code{n.neigh} is greater than zero.
-#'  @references Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
-#'    Gel, Y. R. (2015), Using the bootstrap for statistical inference
-#'    on random graphs. Can J Statistics. doi: 10.1002/cjs.11271
 #' @return A list consisting of
 #'    \item{samples}{A list of length \code{num.sam} where each element
 #'          is a list containing three tables:
 #'          the frequency of degrees sampled from seeds,
 #'          non-seeds including duplicated nodes,
-#'          and non-seeds without duplications. Each sample has its own list.}
+#'          and non-seeds without duplications.}
 #'    \item{values}{A list of length \code{num.sam} where each element is a
 #'          vector containing the unique degree values sampled in each LSMI.}
 #'    \item{Oemp}{A list of length \code{num.sam} where each element

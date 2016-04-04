@@ -13,7 +13,7 @@ LSMI(net, n.seeds = 10, n.neigh = 1, seeds = NULL)
     \code{matrix} where each row is an edge.}
   \item{degree}{The degree sequence of the network, which is
     an \code{integer} vector of length n.}
-  \item{n}{The network order. The order for every network is 2000.}
+  \item{n}{The network order.}
 }
   The object can be created by \code{\link{local.network.MR.new5}} or
   it can be imported.}
@@ -27,13 +27,10 @@ corresponds to sampling seeds and their first neighbors).
 Note that the algorithm allows for multiple inclusions.}
 
 \item{seeds}{A matrix of dimension \code{num.sam} x \code{n.seeds} containing the
-  numeric ids of the seeds to initiate sampling. Each row of the matrix
-  corresponds to one LSMI sample. Note that this is an optional parameter.
-  WARNING: As of now, this feature is only supported when
-  parameter \code{n.neigh} is greater than zero.
-@references Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
-  Gel, Y. R. (2015), Using the bootstrap for statistical inference
-  on random graphs. Can J Statistics. doi: 10.1002/cjs.11271}
+numeric ids of the seeds to initiate sampling. Each row of the matrix
+corresponds to one LSMI sample. Note that this is an optional parameter.
+WARNING: As of now, this feature is only supported when
+parameter \code{n.neigh} is greater than zero.}
 }
 \value{
 A list containing the following elements:

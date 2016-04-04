@@ -2,7 +2,7 @@
 % Please edit documentation in R/sample_about_one_seed.R
 \name{sample_about_one_seed}
 \alias{sample_about_one_seed}
-\title{Snowball sampling with multiple inclusion around a single seed}
+\title{Snowball Sampling with Multiple Inclusion Around a Single Seed}
 \usage{
 sample_about_one_seed(net, seed0, n.neigh = 1)
 }
@@ -13,7 +13,7 @@ sample_about_one_seed(net, seed0, n.neigh = 1)
     \code{matrix} where each row is an edge.}
   \item{degree}{The degree sequence of the network, which is
     an \code{integer} vector of length n.}
-  \item{n}{The network order. The order for every network is 2000.}
+  \item{n}{The network order.}
 }
   The object can be created by \code{\link{local.network.MR.new5}} or
   it can be imported.}
@@ -40,7 +40,6 @@ This function performs snowball sampling with multiple inclusions (LSMI) around 
 single seed.
 }
 \note{
-The functions main purpose is to be called from
 \code{\link{LSMI}.}
 }
 \examples{

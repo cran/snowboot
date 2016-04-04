@@ -14,7 +14,7 @@ Oempdegreedistrib(net, n.seeds, n.neigh, num.sam = 1, seeds = NULL)
     \code{matrix} where each row is an edge.}
   \item{degree}{The degree sequence of the network, which is
     an \code{integer} vector of length n.}
-  \item{n}{The network order. The order for every network is 2000.}
+  \item{n}{The network order.}
 }
   The object can be created by \code{\link{local.network.MR.new5}} or
   it can be imported.}
@@ -30,13 +30,10 @@ Note that the algorithm allows for multiple inclusions.}
 \item{num.sam}{A number for the LSMI repetitions. Default value is one.}
 
 \item{seeds}{A matrix of dimension \code{num.sam} x \code{n.seeds} containing the
-  numeric ids of the seeds to initiate sampling. Each row of the matrix
-  corresponds to one LSMI sample. Note that this is an optional parameter.
-  WARNING: As of now, this feature is only supported when
-  parameter \code{n.neigh} is greater than zero.
-@references Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
-  Gel, Y. R. (2015), Using the bootstrap for statistical inference
-  on random graphs. Can J Statistics. doi: 10.1002/cjs.11271}
+numeric ids of the seeds to initiate sampling. Each row of the matrix
+corresponds to one LSMI sample. Note that this is an optional parameter.
+WARNING: As of now, this feature is only supported when
+parameter \code{n.neigh} is greater than zero.}
 }
 \value{
 A list consisting of
@@ -44,7 +41,7 @@ A list consisting of
          is a list containing three tables:
          the frequency of degrees sampled from seeds,
          non-seeds including duplicated nodes,
-         and non-seeds without duplications. Each sample has its own list.}
+         and non-seeds without duplications.}
    \item{values}{A list of length \code{num.sam} where each element is a
          vector containing the unique degree values sampled in each LSMI.}
    \item{Oemp}{A list of length \code{num.sam} where each element
@@ -85,5 +82,10 @@ from labeled snowball sampling with multiple inclusion (LSMI).
 \examples{
 net <- artificial_networks[[1]]
 sam.out <- Oempdegreedistrib(net = net, n.seeds = 40, n.neigh = 1, num.sam = 1)
+}
+\references{
+Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
+   Gel, Y. R. (2015), Using the bootstrap for statistical inference
+   on random graphs. Can J Statistics. doi: 10.1002/cjs.11271
 }
 

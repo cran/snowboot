@@ -1,10 +1,9 @@
-#' Snowball sampling with multiple inclusion around a single seed
+#' Snowball Sampling with Multiple Inclusion Around a Single Seed
 #'
 #' This function performs snowball sampling with multiple inclusions (LSMI) around a
 #' single seed.
 #'
-#' @note The functions main purpose is to be called from
-#' \code{\link{LSMI}.}
+#' @note \code{\link{LSMI}.}
 #'
 #' @param seed0 \code{num}. Id of a seed to be sampled around.
 #' @references Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
