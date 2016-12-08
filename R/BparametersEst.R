@@ -86,6 +86,7 @@ BparametersEst <- function(outBootdeg) {
                   } else {
                         if (w == 1) {
                               empd <- outBootdeg$empd[[m]]$empd.w.p0s
+                              in.while <- FALSE
                         } else if (w == 2) {
                               empd <- outBootdeg$empd[[m]]$empd.nw.p0sEkb
                         } else if (w == 3) {

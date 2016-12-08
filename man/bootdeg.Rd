@@ -4,7 +4,7 @@
 \alias{bootdeg}
 \title{Bootstrapping Empirical Degree Distribution}
 \usage{
-bootdeg(sam.out, num.sam = sam.out$num.sam, n.boot = 1)
+bootdeg(sam.out, num.sam = sam.out$num.sam, n.boot = 1, method = "w")
 }
 \arguments{
 \item{sam.out}{A list that is the output of \code{\link{Oempdegreedistrib}}.}
@@ -14,18 +14,24 @@ samples when \code{sam.out$num.sam} is greater than one. When \code{num.sam} is 
 integer, N, LSMI from 1 to N are taken from the input \code{sam.out}.}
 
 \item{n.boot}{A positive integer number, the number of bootstrap replications.}
+
+\item{method}{Can be either "w" for weighted bootstrap or "nw" for
+non-weighted bootstrap. "w" is recommended and set as the default method.}
 }
 \value{
 A list consisting of:
    \item{values}{A list of length \code{num.sam} where each element is a
          vector containing the unique degree values sampled in each LSMI.}
-   \item{empd}{A list of length three where each element contains a different
-         estimate of degree distribution: empd.w.p0s - weighted bootstrap
-         with a proportion of isolated nodes p0 being estimated by simple
-         random sampling of bootstrapped seeds; empd.nw.p0sEkb - non-weighted
-         bootstrap with a proportion of isolated nodes p0 being estimated by
-         simple random sampling of bootstrapped seeds; empd.nw.p0sEks -ignore
-         (see Thompson et al. for details)}
+   \item{empd}{A list of length \code{num.sam} where each element contains an
+         estimate of degree distribution for each LSMI. The method of
+         estimation is set with the \code{method} parameter. If
+         \code{method="w"} the object empd.w.p0s is returned, which is
+         a weighted bootstrap with a proportion of isolated nodes, p0,
+         being estimated by simple random sampling of bootstrapped
+         seeds; If \code{method="nw"} the object empd.nw.p0sEkb, which
+         is - non-weighted bootstrap with a proportion of isolated nodes,
+         p0, being estimated by simple random sampling of bootstrapped seeds
+         (see Thompson et al. for details).}
    \item{num.sam}{Numeric indices corresponding to LSMI samples used for bootstrap.}
    \item{n.boot}{The same object as input argument \code{n.boot}.}
    \item{n.neigh}{The number of waves carried out by the snowball sample.

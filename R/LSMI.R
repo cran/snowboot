@@ -4,6 +4,7 @@
 #' @references Thompson, M. E., Ramirez Ramirez, L. L., Lyubchich, V. and
 #'  Gel, Y. R. (2015), Using the bootstrap for statistical inference
 #'  on random graphs. Can J Statistics. doi: 10.1002/cjs.11271
+#' @param classic Option for neighborhoods, i.e. waves, without multiple inclusions.
 #' @inheritParams Oempdegreedistrib
 #'
 #' @return A list containing the following elements:
@@ -28,8 +29,7 @@
 #' net <- artificial_networks[[1]]
 #' a <- LSMI(net, n.seeds = 20, n.neigh = 2)
 
-LSMI <- function(net, n.seeds = 10, n.neigh = 1, seeds = NULL) {
-
+LSMI <- function(net, n.seeds = 10, n.neigh = 1, seeds = NULL, classic = F) {
       unodes <- nodes.waves <- as.list(rep(0, n.seeds))
       # Seed selection: is without replacement and at random
       if (is.null(seeds)) {
@@ -38,13 +38,19 @@ LSMI <- function(net, n.seeds = 10, n.neigh = 1, seeds = NULL) {
             seed0 <- seeds
       }
       sampleN <- NULL
-      for (i in 1:n.seeds) {
-            res <- sample_about_one_seed(net, seed0[i], n.neigh)
-            sampleN <- c(sampleN, res$sampleN)
-            unodes[[i]] <- res$unodes
-            nodes.waves[[i]] <- res$nodes.waves
+      if(classic == T){
+        g <- igraph::graph_from_edgelist(net$edges)
+        sampleN <- unlist(igraph::ego(g, order = n.neigh, nodes = seed0))
+      } else {
+        for (i in 1:n.seeds) {
+          snowball <- sample_about_one_seed(net, seed0[i], n.neigh)
+          sampleN <- c(sampleN, snowball$sampleN)
+          unodes[[i]] <- snowball$unodes
+          nodes.waves[[i]] <- snowball$nodes.waves
+        }
       }
-      list(seeds = seed0, sampleN = sort(sampleN), unodes = unodes, nodes.waves = nodes.waves)
+      res <- list(seeds = seed0, sampleN = sort(sampleN))
+      res
 }
 # Examples #we are not really interested in running this function directly but within the next function called empdegree
 # distrib6 net<-local.network.MR.new5(n=100,distrib='pois',param=2)

@@ -4,7 +4,7 @@
 \alias{LSMI}
 \title{Snowball sampling with multiple inclusion.}
 \usage{
-LSMI(net, n.seeds = 10, n.neigh = 1, seeds = NULL)
+LSMI(net, n.seeds = 10, n.neigh = 1, seeds = NULL, classic = F)
 }
 \arguments{
 \item{net}{A network object that is list containing:
@@ -31,6 +31,8 @@ numeric ids of the seeds to initiate sampling. Each row of the matrix
 corresponds to one LSMI sample. Note that this is an optional parameter.
 WARNING: As of now, this feature is only supported when
 parameter \code{n.neigh} is greater than zero.}
+
+\item{classic}{Option for neighborhoods, i.e. waves, without multiple inclusions.}
 }
 \value{
 A list containing the following elements:
