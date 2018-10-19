@@ -1,6 +1,6 @@
 #' Create a "Network" Object from an igraph Object
 #'
-#' This function will convert an igraph object to an object compatible with
+#' This function converts an igraph object to an object compatible with
 #' snowboot functions.
 #'
 #' @param in_graph An igraph object. To create igraph objects from field data,
@@ -20,14 +20,14 @@
 #' hex_ring <- igraph::make_ring(6, directed = FALSE, mutual = FALSE, circular = TRUE)
 #' net <- igraph_to_network(hex_ring)
 igraph_to_network <- function(in_graph){
-      if(igraph::is.directed(in_graph))
-            stop('Only undirected graphs are supported at the moment.
+  if(igraph::is.directed(in_graph))
+    stop('Only undirected graphs are supported at the moment.
                   Please import undirected igraph object, e.g. output of
-                  graph_from_edgelist(el,directed = F)')
-      edges <- igraph::as_edgelist(in_graph)
-      edges <- order.edges(edges, ord.col = TRUE)
-      degree <- igraph::degree(in_graph)
-      #degree.left <- rep(0,igraph::gorder(in_graph))
-      n <- igraph::gorder(in_graph)
-      list(edges = edges, degree = degree, n = n)
+                  graph_from_edgelist(el,directed = FASLE)')
+  edges <- igraph::as_edgelist(in_graph)
+  edges <- order.edges(edges, ord.col = TRUE)
+  degree <- igraph::degree(in_graph)
+  #degree.left <- rep(0,igraph::gorder(in_graph))
+  n <- igraph::gorder(in_graph)
+  list(edges = edges, degree = degree, n = n)
 }

@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // vertboot_matrix_rcpp
 IntegerMatrix vertboot_matrix_rcpp(IntegerMatrix m1, IntegerVector blist);
-RcppExport SEXP snowboot_vertboot_matrix_rcpp(SEXP m1SEXP, SEXP blistSEXP) {
+RcppExport SEXP _snowboot_vertboot_matrix_rcpp(SEXP m1SEXP, SEXP blistSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -16,4 +16,14 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(vertboot_matrix_rcpp(m1, blist));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_snowboot_vertboot_matrix_rcpp", (DL_FUNC) &_snowboot_vertboot_matrix_rcpp, 2},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_snowboot(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

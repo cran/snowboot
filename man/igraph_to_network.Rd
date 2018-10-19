@@ -22,7 +22,7 @@ A list that contain elements:
    \item{n}{The network order.}
 }
 \description{
-This function will convert an igraph object to an object compatible with
+This function converts an igraph object to an object compatible with
 snowboot functions.
 }
 \examples{
@@ -32,4 +32,3 @@ net <- igraph_to_network(hex_ring)
 \references{
 \url{http://igraph.org/}
 }
-
