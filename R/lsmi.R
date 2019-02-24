@@ -2,8 +2,9 @@
 #'
 #' Obtain LSMI samples around several seeds, which can be selected randomly or
 #' pre-specified. See Figure 1 by
-#' \insertCite{gel_etal_2017;textual}{snowboot} illustrating the algorithm
-#' of sampling around multiple seeds.
+#' \insertCite{gel_etal_2017;textual}{snowboot} or
+#' Figure 2 by \insertCite{chen_etal_2018_snowboot;textual}{snowboot}
+#' illustrating the algorithm of sampling around multiple seeds.
 #'
 #' If \code{seeds} specified, \code{n.seed} is not used.
 #'

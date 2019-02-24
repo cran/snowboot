@@ -5,6 +5,7 @@
 #' The point estimates are supplemented with box-and-whisker plots
 #' of bootstrapped values (if the input is a \code{\link{boot_dd}} output) or element-wise
 #' bootstrap confidence intervals (if the input is a \code{\link{boot_ci}} output).
+#' See \insertCite{chen_etal_2018_snowboot;textual}{snowboot}.
 #'
 #' @param x output of \code{\link{lsmi_dd}}, \code{\link{boot_dd}}, or \code{\link{boot_ci}}.
 #' @param k an integer vector with degrees to plot.
@@ -30,6 +31,9 @@
 #' (see arguments in \code{\link[graphics]{legend}}).
 #' @param las argument of \code{\link[graphics]{plot}} function.
 #' @param ... additional arguments to pass to the \code{\link[graphics]{plot}} function.
+#'
+#' @references
+#' \insertAllCited{}
 #'
 #' @export
 #'
@@ -58,7 +62,7 @@ plot.snowboot <- function(x, k = NULL, plotmu = TRUE,
     k <- 0:(length(x$fk) - 1)
   }
   k <- sort(k)
-  k <- k[k < (length(x$fk) - 1)]
+  k <- k[k <= (length(x$fk) - 1)]
   if (length(k) == 0) {stop(paste("Specify k within the range from 0 to", (length(x$fk) - 1)))}
   ind <- is.element(0:(length(x$fk) - 1), k)
   YLIM <- c(0, max(x$fk[ind]))
@@ -85,7 +89,7 @@ plot.snowboot <- function(x, k = NULL, plotmu = TRUE,
     YLIM[2] <- max(x$fk_ci[,ind])
   }
   plot(k, x$fk[ind], ylim = YLIM, las = las, type = "n", yaxt = "n",
-       xlab = "k", ylab = "f(k)") #, ...
+       xlab = "k", ylab = "f(k)", ...)
   tmp <- axTicks(2)
   axis(2, at = tmp[tmp >= 0], las = las)
   abline(h = 0, col = col0, lwd = lwd0)

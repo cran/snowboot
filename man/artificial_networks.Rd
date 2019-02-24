@@ -26,7 +26,7 @@ polylogarithmic (aka Gutenberg--Richter law) degree distribution with parameters
 \deqn{f(k) = k^{-{\delta}}e^{-{k/{\lambda}}}/Li_{\delta}(e^{-{1/\lambda}})}{f(k)=k^-\delta exp(-k/\lambda )/Li[\delta](exp(-1/\lambda)),}
 \deqn{Li_{\delta}(z)=\sum_{j=1}^{\infty} z^{-j}/{j^{\delta}},}{Li[\delta](z)=\sum_{j=1}^{\infty} z^{-j}/{j^{\delta}},}
 where \eqn{\lambda > 0}
-\insertCite{@see @newman_etal_2001 and @gel_etal_2017 for details}{snowboot}.
+\insertCite{@see @newman_etal_2001, @gel_etal_2017, and @chen_etal_2018_snowboot for details}{snowboot}.
 }
 \references{
 \insertAllCited{}

@@ -36,7 +36,8 @@ A list object of class "\code{snowboot}" consisting of:
    \item{fkb}{A matrix of dimensions \code{length(x$fk)}\eqn{\times}\code{B}
    with \code{B} bootstrap estimates of the degree distribution.
    The bootstrap estimates are computed according to
-   Equation 1 by \insertCite{gel_etal_2017;textual}{snowboot}.}
+   Equation 1 by \insertCite{gel_etal_2017;textual}{snowboot}, also
+   see \insertCite{chen_etal_2018_snowboot;textual}{snowboot}.}
    \item{mub}{A vector of length \code{B} with bootstrapped estimates
    of the network mean degree.
    The bootstrap estimates are computed according to

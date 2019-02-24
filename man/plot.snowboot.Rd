@@ -58,6 +58,7 @@ of mean degree, \eqn{\hat{\mu}}, where \eqn{k = 0, 1, \ldots} are the degrees.
 The point estimates are supplemented with box-and-whisker plots
 of bootstrapped values (if the input is a \code{\link{boot_dd}} output) or element-wise
 bootstrap confidence intervals (if the input is a \code{\link{boot_ci}} output).
+See \insertCite{chen_etal_2018_snowboot;textual}{snowboot}.
 }
 \examples{
 net <- artificial_networks[[1]]
@@ -70,4 +71,7 @@ plot(x2, k = c(1:10))
 x3 <- boot_ci(x2, prob = 0.99)
 plot(x3, k = c(1:10))
 
+}
+\references{
+\insertAllCited{}
 }

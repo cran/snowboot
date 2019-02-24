@@ -4,6 +4,7 @@
 #' lsmi_dd computes an empirical network degree distribution and estimates
 #' mean degree based on data from an LSMI sample from a network;
 #' see Equations 6 and 7 by \insertCite{thompson_etal_2016;textual}{snowboot}
+#' and Equation 1 by \insertCite{chen_etal_2018_snowboot;textual}{snowboot}
 #' on the details of the calculations.
 #'
 #' The samples produced with \code{\link{lsmi}} or \code{\link{lsmi_union}} contain

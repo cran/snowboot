@@ -1,11 +1,13 @@
-#'Bootstrapping a Network with Vertex Bootstrap
+#' Bootstrapping a Network with Vertex Bootstrap
 #'
-#'This function bootstraps the original network using a vertex bootstrap technique.
+#' This function bootstraps the original network using a vertex bootstrap technique.
+#' See \insertCite{snijders_borgatti_1999;textual}{snowboot}
+#' and \insertCite{chen_etal_2018_snowboot;textual}{snowboot}.
 #'
 #' @param m1 An adjacency matrix of the original network.
 #' @param boot_rep A positive integer number, the number of bootstrap replications.
 #' @references
-#' \insertRef{snijders_borgatti_1999}{snowboot}
+#' \insertAllCited{}
 #' @return A list of bootstrapped networks as adjacency matrices.
 #' @export
 #' @examples

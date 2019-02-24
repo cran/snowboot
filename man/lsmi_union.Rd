@@ -53,7 +53,8 @@ Note that the produced LSMIs are slightly different from those described by
 \insertCite{gel_etal_2017;textual}{snowboot}. The current R implementation
 produces smaller LSMIs by subsetting the seeds, not by new sampling of
 seeds from the network and growing completely new LSMIs, as it was done by
-\insertCite{gel_etal_2017;textual}{snowboot}.
+\insertCite{gel_etal_2017;textual}{snowboot}. See the details in Figure 3 by
+\insertCite{chen_etal_2018_snowboot;textual}{snowboot}
 }
 \examples{
 net <- artificial_networks[[1]]

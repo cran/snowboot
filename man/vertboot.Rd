@@ -16,6 +16,8 @@ A list of bootstrapped networks as adjacency matrices.
 }
 \description{
 This function bootstraps the original network using a vertex bootstrap technique.
+See \insertCite{snijders_borgatti_1999;textual}{snowboot}
+and \insertCite{chen_etal_2018_snowboot;textual}{snowboot}.
 }
 \examples{
 graph_ex <- igraph::graph_from_edgelist(artificial_networks[[1]]$edges)
@@ -24,5 +26,5 @@ m1 <- as.matrix(m1)
 vertboot_out <- vertboot(m1, 20)
 }
 \references{
-\insertRef{snijders_borgatti_1999}{snowboot}
+\insertAllCited{}
 }
