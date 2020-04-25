@@ -4,12 +4,24 @@
 \alias{plot.snowboot}
 \title{Plot Degree Distribution Estimates}
 \usage{
-\method{plot}{snowboot}(x, k = NULL, plotmu = TRUE,
-  plotlegend = TRUE, col0 = "gray50", lwd0 = 1,
-  colpt = "royalblue3", lwdpt = 2, pchpt = 4, coli = "palegreen3",
-  colibg = "palegreen", length = 0.1, boxwex = 0.4,
-  legendargs = list(x = "topright", cex = 0.9, bty = "n"), las = 1,
-  ...)
+\method{plot}{snowboot}(
+  x,
+  k = NULL,
+  plotmu = TRUE,
+  plotlegend = TRUE,
+  col0 = "gray50",
+  lwd0 = 1,
+  colpt = "royalblue3",
+  lwdpt = 2,
+  pchpt = 4,
+  coli = "palegreen3",
+  colibg = "palegreen",
+  length = 0.1,
+  boxwex = 0.4,
+  legendargs = list(x = "topright", cex = 0.9, bty = "n"),
+  las = 1,
+  ...
+)
 }
 \arguments{
 \item{x}{output of \code{\link{lsmi_dd}}, \code{\link{boot_dd}}, or \code{\link{boot_ci}}.}

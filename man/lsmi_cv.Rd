@@ -4,9 +4,19 @@
 \alias{lsmi_cv}
 \title{Cross-validation to Select an Optimal Combination of n.seed and n.wave}
 \usage{
-lsmi_cv(net, n.seeds, n.wave, seeds = NULL, B = 100, prob = 0.95,
-  cl = 1, param = c("mu"), method = c("percentile", "basic"),
-  proxyRep = 19, proxySize = 30)
+lsmi_cv(
+  net,
+  n.seeds,
+  n.wave,
+  seeds = NULL,
+  B = 100,
+  prob = 0.95,
+  cl = 1,
+  param = c("mu"),
+  method = c("percentile", "basic"),
+  proxyRep = 19,
+  proxySize = 30
+)
 }
 \arguments{
 \item{net}{a network object that is a list containing:

@@ -5,7 +5,8 @@
 \alias{artificial_networks}
 \title{10 Simulated Networks of Order 2000 with Polylogarithmic (0.1, 2)
 Degree Distributions}
-\format{A list containing 10 network objects. Each network object is a list
+\format{
+A list containing 10 network objects. Each network object is a list
 with three elements:
 \describe{
   \item{\code{degree}}{the degree sequence of the network, which is
@@ -14,7 +15,8 @@ with three elements:
      matrix, where each row is an edge of the network;}
   \item{\code{n}}{the network order (number of nodes in the network).
   The order is 2000.}
-}}
+}
+}
 \usage{
 artificial_networks
 }

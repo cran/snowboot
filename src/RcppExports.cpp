@@ -18,8 +18,11 @@ BEGIN_RCPP
 END_RCPP
 }
 
+RcppExport void vzetawr(void *, void *, void *, void *);
+
 static const R_CallMethodDef CallEntries[] = {
     {"_snowboot_vertboot_matrix_rcpp", (DL_FUNC) &_snowboot_vertboot_matrix_rcpp, 2},
+    {"vzetawr", (DL_FUNC) &vzetawr, 4},
     {NULL, NULL, 0}
 };
 

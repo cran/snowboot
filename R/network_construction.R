@@ -10,8 +10,8 @@ li <- function(delta, b, lim = 10000) {
   # b can be a vector
   res <- rep(0, length(b))
   if (length(delta) != 1)
-    stop("delta debe ser escalar") else res[b == 1] <- VGAM::zeta(delta)
-    # else if(length(delta)==length(b))res[b==1]<-VGAM::zeta(delta[b==1])
+    stop("delta debe ser escalar") else res[b == 1] <- VGAM_zeta(delta)
+    # else if(length(delta)==length(b))res[b==1]<-VGAM_zeta(delta[b==1])
     a <- which(b != 1)
     if (length(a))
       for (j in a) res[j] <- sum(b[j]^(1:lim)/(1:lim)^delta)
@@ -133,7 +133,7 @@ rpower.law <- function(n, param) {
   # where param a real number >1
   if (length(param) != 1 | param <= 1)
     stop("the power law parameter must be a real number grater than one") else {
-    pdf.s <- (1:1000)^(-param) * (VGAM::zeta(param))^(-1)
+    pdf.s <- (1:1000)^(-param) * (VGAM_zeta(param))^(-1)
     sim <- cut(stats::runif(n), unique(c(0, cumsum(pdf.s))), labels = FALSE, right = FALSE)
   }
   sim
@@ -146,7 +146,7 @@ dpower.law <- function(x, param) {
   if (length(param) != 1)
     stop("the power law parameter dimension is wrong (it must be of length 1)
          or the parameter value is incorrect") else {
-               pdf.s <- x^(-param) * (VGAM::zeta(param))^(-1)
+               pdf.s <- x^(-param) * (VGAM_zeta(param))^(-1)
          }
   pdf.s
 }
